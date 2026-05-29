@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EBOOKENDO - Redirecionamento</title>
+    <script type="text/javascript">
+      // Script de redirecionamento para Single Page Apps no GitHub Pages
+      // Redireciona automaticamente para a página raiz da SPA
+      var pathSegmentsToKeep = 1; // Mantém /EBOOKENDO/
+      var l = window.location;
+      
+      // Constrói a URL de redirecionamento
+      var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') +
+        '/?_p=' + l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&_q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+      
+      // Redireciona imediatamente
+      window.location.replace(redirect);
+    </script>
+  </head>
+  <body>
+    <p>Redirecionando...</p>
+  </body>
+</html>
